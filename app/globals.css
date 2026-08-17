@@ -67,6 +67,7 @@
     --color-footer-faded: oklch(1 0 0 / 50%);
     --color-footer-border: oklch(1 0 0 / 10%);
     --color-footer-border-accent: oklch(1 0 0 / 20%);
+
     /* --- Typography scale (generates text-h1, text-h2, etc.) --- */
     --font-size-h1: 3rem;
     --font-size-h1--line-height: 1.2;

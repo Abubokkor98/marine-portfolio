@@ -4,10 +4,7 @@ import { Download, ArrowRight } from "@phosphor-icons/react/ssr"
 
 export function HeroSection() {
   return (
-    <section
-      id="hero"
-      className="gradient-navy-to-slate py-20 lg:py-28"
-    >
+    <section id="hero" className="gradient-navy-to-slate py-20 lg:py-28">
       <div className="container-section">
         <div className="max-w-2xl">
           <Text variant="h1" className="text-footer">
@@ -34,7 +31,7 @@ export function HeroSection() {
               className="gap-2 border-footer-border-accent text-footer hover:bg-footer-border-accent"
             >
               <Download size={16} />
-              Download CV
+              View CV
             </Button>
           </div>
         </div>
