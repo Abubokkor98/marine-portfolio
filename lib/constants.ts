@@ -98,4 +98,5 @@ export const CURRENT_SHIP: ShipInfo = {
 /* -------------------------------------------------------------------------- */
 
 export const COPYRIGHT_YEAR = 2026
-export const COPYRIGHT_NAME = "Sister's Name"
+export const COPYRIGHT_NAME = "Sumaiya Akter"
+export const ROLE_TITLE = "Engine Cadet"

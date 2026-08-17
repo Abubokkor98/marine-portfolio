@@ -4,8 +4,8 @@ import { Geist_Mono, Public_Sans, Poppins } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { SITE_CONFIG } from "@/lib/constants"
-import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer/footer"
+import { Navbar } from "@/components/navbar/navbar"
 
 /* -------------------------------------------------------------------------- */
 /*  Fonts                                                                      */

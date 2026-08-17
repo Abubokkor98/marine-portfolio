@@ -9,19 +9,19 @@
 
 ## Actual Stack Reference
 
-| Package | Version | Notes |
-|---------|---------|-------|
-| `next` | 16.2.6 | App Router, Server Components default |
-| `react` / `react-dom` | 19.2.4 | No `useCallback` needed for handlers |
-| `tailwindcss` | ^4 | CSS-first config via `@theme`, no `tailwind.config.ts` |
-| `@tailwindcss/postcss` | ^4 | Single PostCSS plugin (replaces old tailwindcss + autoprefixer) |
-| `shadcn` | ^4.18.0 | v4 rewrite, uses Base UI instead of Radix |
-| `@base-ui/react` | ^1.7.0 | Successor to Radix UI primitives |
-| `next-themes` | ^0.4.6 | Dark mode via `.dark` class |
-| `@phosphor-icons/react` | ^2.1.10 | Icon system |
-| `class-variance-authority` | ^0.7.1 | Component variant styling |
-| `clsx` + `tailwind-merge` | ^2.1.1 / ^3.6.0 | Class merging via `cn()` |
-| `tw-animate-css` | ^1.4.0 | shadcn animation layer |
+| Package                    | Version         | Notes                                                           |
+| -------------------------- | --------------- | --------------------------------------------------------------- |
+| `next`                     | 16.2.6          | App Router, Server Components default                           |
+| `react` / `react-dom`      | 19.2.4          | No `useCallback` needed for handlers                            |
+| `tailwindcss`              | ^4              | CSS-first config via `@theme`, no `tailwind.config.ts`          |
+| `@tailwindcss/postcss`     | ^4              | Single PostCSS plugin (replaces old tailwindcss + autoprefixer) |
+| `shadcn`                   | ^4.18.0         | v4 rewrite, uses Base UI instead of Radix                       |
+| `@base-ui/react`           | ^1.7.0          | Successor to Radix UI primitives                                |
+| `next-themes`              | ^0.4.6          | Dark mode via `.dark` class                                     |
+| `@phosphor-icons/react`    | ^2.1.10         | Icon system                                                     |
+| `class-variance-authority` | ^0.7.1          | Component variant styling                                       |
+| `clsx` + `tailwind-merge`  | ^2.1.1 / ^3.6.0 | Class merging via `cn()`                                        |
+| `tw-animate-css`           | ^1.4.0          | shadcn animation layer                                          |
 
 ---
 
@@ -34,20 +34,20 @@ Our maritime colors map onto these tokens. Extend them in `globals.css` inside t
 
 #### Maritime Color Reference
 
-| Name | Hex | oklch() | Usage |
-|------|-----|---------|-------|
-| Navy Blue | `#0F172A` | `oklch(0.148 0.04 260)` | Headings, hero backgrounds, authority |
-| Navy Blue Light | `#1E3A5F` | `oklch(0.295 0.06 255)` | Section backgrounds, hover states |
-| Ocean Teal | `#0891B2` | `oklch(0.59 0.14 210)` | Highlights, CTAs, active states |
-| Ocean Teal Light | `#06B6D4` | `oklch(0.68 0.15 210)` | Hover states, dark mode accent |
-| Deep Slate | `#1E293B` | `oklch(0.218 0.008 224)` | Card backgrounds, sections |
-| Light Gray | `#F8FAFC` | `oklch(0.985 0.002 250)` | Light section backgrounds |
-| Text Dark | `#0F172A` | `oklch(0.148 0.04 260)` | Body text, headings |
-| Text Medium | `#64748B` | `oklch(0.56 0.02 250)` | Secondary text, meta info |
-| Text Light | `#F1F5F9` | `oklch(0.965 0.005 250)` | Text on dark backgrounds |
-| Success Green | `#10B981` | `oklch(0.68 0.16 165)` | Certifications achieved |
-| Warning Amber | `#F59E0B` | `oklch(0.78 0.17 75)` | In-progress, pending items |
-| Error Red | `#EF4444` | `oklch(0.63 0.24 25)` | Alerts, critical info |
+| Name             | Hex       | oklch()                  | Usage                                 |
+| ---------------- | --------- | ------------------------ | ------------------------------------- |
+| Navy Blue        | `#0F172A` | `oklch(0.148 0.04 260)`  | Headings, hero backgrounds, authority |
+| Navy Blue Light  | `#1E3A5F` | `oklch(0.295 0.06 255)`  | Section backgrounds, hover states     |
+| Ocean Teal       | `#0891B2` | `oklch(0.59 0.14 210)`   | Highlights, CTAs, active states       |
+| Ocean Teal Light | `#06B6D4` | `oklch(0.68 0.15 210)`   | Hover states, dark mode accent        |
+| Deep Slate       | `#1E293B` | `oklch(0.218 0.008 224)` | Card backgrounds, sections            |
+| Light Gray       | `#F8FAFC` | `oklch(0.985 0.002 250)` | Light section backgrounds             |
+| Text Dark        | `#0F172A` | `oklch(0.148 0.04 260)`  | Body text, headings                   |
+| Text Medium      | `#64748B` | `oklch(0.56 0.02 250)`   | Secondary text, meta info             |
+| Text Light       | `#F1F5F9` | `oklch(0.965 0.005 250)` | Text on dark backgrounds              |
+| Success Green    | `#10B981` | `oklch(0.68 0.16 165)`   | Certifications achieved               |
+| Warning Amber    | `#F59E0B` | `oklch(0.78 0.17 75)`    | In-progress, pending items            |
+| Error Red        | `#EF4444` | `oklch(0.63 0.24 25)`    | Alerts, critical info                 |
 
 #### How to Add Maritime Colors (Tailwind v4 Way)
 
@@ -55,21 +55,21 @@ Add custom maritime tokens inside the existing `@theme inline {}` block in `app/
 
 ```css
 @theme inline {
-    /* ... existing shadcn tokens ... */
+  /* ... existing shadcn tokens ... */
 
-    /* Maritime custom colors */
-    --color-navy-blue: oklch(0.148 0.04 260);
-    --color-navy-blue-light: oklch(0.295 0.06 255);
-    --color-ocean-teal: oklch(0.59 0.14 210);
-    --color-ocean-teal-light: oklch(0.68 0.15 210);
-    --color-deep-slate: oklch(0.218 0.008 224);
-    --color-light-gray: oklch(0.985 0.002 250);
-    --color-text-dark: oklch(0.148 0.04 260);
-    --color-text-medium: oklch(0.56 0.02 250);
-    --color-text-light: oklch(0.965 0.005 250);
-    --color-success-green: oklch(0.68 0.16 165);
-    --color-warning-amber: oklch(0.78 0.17 75);
-    --color-error-red: oklch(0.63 0.24 25);
+  /* Maritime custom colors */
+  --color-navy-blue: oklch(0.148 0.04 260);
+  --color-navy-blue-light: oklch(0.295 0.06 255);
+  --color-ocean-teal: oklch(0.59 0.14 210);
+  --color-ocean-teal-light: oklch(0.68 0.15 210);
+  --color-deep-slate: oklch(0.218 0.008 224);
+  --color-light-gray: oklch(0.985 0.002 250);
+  --color-text-dark: oklch(0.148 0.04 260);
+  --color-text-medium: oklch(0.56 0.02 250);
+  --color-text-light: oklch(0.965 0.005 250);
+  --color-success-green: oklch(0.68 0.16 165);
+  --color-warning-amber: oklch(0.78 0.17 75);
+  --color-error-red: oklch(0.63 0.24 25);
 }
 ```
 
@@ -81,11 +81,11 @@ Add maritime dark mode overrides inside the existing `.dark {}` block:
 
 ```css
 .dark {
-    /* ... existing shadcn dark tokens ... */
+  /* ... existing shadcn dark tokens ... */
 
-    /* Maritime dark overrides (optional, override if needed) */
-    --color-navy-blue: oklch(0.218 0.008 224);
-    --color-ocean-teal: oklch(0.68 0.15 210);
+  /* Maritime dark overrides (optional, override if needed) */
+  --color-navy-blue: oklch(0.218 0.008 224);
+  --color-ocean-teal: oklch(0.68 0.15 210);
 }
 ```
 
@@ -108,14 +108,15 @@ Add maritime dark mode overrides inside the existing `.dark {}` block:
 
 **Recommendation: Public Sans (Body) + Poppins (Headings)**
 
-| Option | Fonts | Best For | Pros | Cons |
-|--------|-------|----------|------|------|
-| **Option 1 (Recommended)** | Public Sans + Poppins | Maritime portfolio | Professional + visual hierarchy | Two font loads |
-| Option 2 | Public Sans + Playfair Display | Luxury/premium feel | High-end serif elegance | Serif harder at small sizes |
-| Option 3 | Public Sans only | Minimalist | Fastest loading, simple | Less visual hierarchy |
-| Option 4 | Poppins only | Friendly + professional | More personality | Both body + heading same |
+| Option                     | Fonts                          | Best For                | Pros                            | Cons                        |
+| -------------------------- | ------------------------------ | ----------------------- | ------------------------------- | --------------------------- |
+| **Option 1 (Recommended)** | Public Sans + Poppins          | Maritime portfolio      | Professional + visual hierarchy | Two font loads              |
+| Option 2                   | Public Sans + Playfair Display | Luxury/premium feel     | High-end serif elegance         | Serif harder at small sizes |
+| Option 3                   | Public Sans only               | Minimalist              | Fastest loading, simple         | Less visual hierarchy       |
+| Option 4                   | Poppins only                   | Friendly + professional | More personality                | Both body + heading same    |
 
 **Why Public Sans + Poppins for this project:**
+
 1. **Readability**: Maritime industry values clarity (safety-critical) — Public Sans is highly legible
 2. **International Appeal**: Both fonts support many languages — viewed by international shipping companies
 3. **Professional**: Tech/Maritime industry standard — conveys modern, forward-thinking engineer
@@ -125,15 +126,15 @@ Add maritime dark mode overrides inside the existing `.dark {}` block:
 
 #### Font Comparison Table
 
-| Font | Type | Best For | Load Size | Readability | Professional |
-|------|------|----------|-----------|-------------|--------------|
-| Public Sans | Sans-serif | Body, UI | ~15KB | Excellent | High |
-| Inter | Sans-serif | Body, UI | ~15KB | Excellent | High |
-| Poppins | Geometric Sans | Headings | ~18KB | Good | High |
-| Playfair Display | Serif | Headings | ~12KB | Good (H1-H3) | Very High |
-| Cabin | Humanist Sans | Body | ~16KB | Excellent | High |
-| JetBrains Mono | Monospace | Code | ~8KB | Excellent | High |
-| Geist Mono | Monospace | Code | ~10KB | Excellent | High |
+| Font             | Type           | Best For | Load Size | Readability  | Professional |
+| ---------------- | -------------- | -------- | --------- | ------------ | ------------ |
+| Public Sans      | Sans-serif     | Body, UI | ~15KB     | Excellent    | High         |
+| Inter            | Sans-serif     | Body, UI | ~15KB     | Excellent    | High         |
+| Poppins          | Geometric Sans | Headings | ~18KB     | Good         | High         |
+| Playfair Display | Serif          | Headings | ~12KB     | Good (H1-H3) | Very High    |
+| Cabin            | Humanist Sans  | Body     | ~16KB     | Excellent    | High         |
+| JetBrains Mono   | Monospace      | Code     | ~8KB      | Excellent    | High         |
+| Geist Mono       | Monospace      | Code     | ~10KB     | Excellent    | High         |
 
 #### Current Font Setup (in `app/layout.tsx`)
 
@@ -162,28 +163,28 @@ Then register the display font in `globals.css`:
 
 ```css
 @theme inline {
-    --font-display: var(--font-display);
+  --font-display: var(--font-display);
 }
 ```
 
 #### Font Sizes & Weights (Complete Reference)
 
-| Element | Font | Size | Weight | Line Height | Color | Use Case |
-|---------|------|------|--------|-------------|-------|----------|
-| H1 (Hero/Page Title) | Poppins | 48px | 700 bold | 1.2 | Navy Blue | Main heading, hero section |
-| H2 (Section Title) | Poppins | 36px | 700 bold | 1.3 | Navy Blue | Section headers |
-| H3 (Subsection) | Poppins | 24px | 600 semi-bold | 1.4 | Navy Blue | Card titles, subsections |
-| H4 (Card Title) | Poppins | 18px | 600 semi-bold | 1.4 | Navy Blue | Small card headings |
-| Body Text (Paragraphs) | Public Sans | 16px | 400 regular | 1.6 | Dark text | Main content paragraphs |
-| Body Small | Public Sans | 15px | 400 regular | 1.6 | Dark text | Secondary paragraphs |
-| Small Text (Label) | Public Sans | 14px | 500 medium | 1.5 | Medium gray | Labels, meta info |
-| Meta Text (Caption) | Public Sans | 12px | 400 regular | 1.5 | Light gray | Dates, timestamps, captions |
-| XS Text | Public Sans | 11px | 400 regular | 1.4 | Light gray | Badge text, very small labels |
-| Button Text | Public Sans | 14px | 600 semi-bold | 1.2 | White/Teal | Buttons, CTAs |
-| Link Text | Public Sans | 16px | 400 regular | 1.6 | Teal | Hyperlinks |
-| Quote/Emphasis | Poppins | 18px | 500 medium | 1.6 | Navy Blue | Pull quotes, testimonials |
-| Badge Text | Public Sans | 12px | 600 semi-bold | 1.2 | White | Status badges, tags |
-| Monospace (Code) | Geist Mono | 13px | 400 regular | 1.5 | Dark gray | Technical certificates, IDs |
+| Element                | Font        | Size | Weight        | Line Height | Color       | Use Case                      |
+| ---------------------- | ----------- | ---- | ------------- | ----------- | ----------- | ----------------------------- |
+| H1 (Hero/Page Title)   | Poppins     | 48px | 700 bold      | 1.2         | Navy Blue   | Main heading, hero section    |
+| H2 (Section Title)     | Poppins     | 36px | 700 bold      | 1.3         | Navy Blue   | Section headers               |
+| H3 (Subsection)        | Poppins     | 24px | 600 semi-bold | 1.4         | Navy Blue   | Card titles, subsections      |
+| H4 (Card Title)        | Poppins     | 18px | 600 semi-bold | 1.4         | Navy Blue   | Small card headings           |
+| Body Text (Paragraphs) | Public Sans | 16px | 400 regular   | 1.6         | Dark text   | Main content paragraphs       |
+| Body Small             | Public Sans | 15px | 400 regular   | 1.6         | Dark text   | Secondary paragraphs          |
+| Small Text (Label)     | Public Sans | 14px | 500 medium    | 1.5         | Medium gray | Labels, meta info             |
+| Meta Text (Caption)    | Public Sans | 12px | 400 regular   | 1.5         | Light gray  | Dates, timestamps, captions   |
+| XS Text                | Public Sans | 11px | 400 regular   | 1.4         | Light gray  | Badge text, very small labels |
+| Button Text            | Public Sans | 14px | 600 semi-bold | 1.2         | White/Teal  | Buttons, CTAs                 |
+| Link Text              | Public Sans | 16px | 400 regular   | 1.6         | Teal        | Hyperlinks                    |
+| Quote/Emphasis         | Poppins     | 18px | 500 medium    | 1.6         | Navy Blue   | Pull quotes, testimonials     |
+| Badge Text             | Public Sans | 12px | 600 semi-bold | 1.2         | White       | Status badges, tags           |
+| Monospace (Code)       | Geist Mono  | 13px | 400 regular   | 1.5         | Dark gray   | Technical certificates, IDs   |
 
 #### Font Weight Strategy
 
@@ -196,27 +197,33 @@ Then register the display font in `globals.css`:
 
 ```css
 /* Headings */
-font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', sans-serif;
+font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
 
 /* Body */
-font-family: 'Public Sans', -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+font-family:
+  "Public Sans",
+  -apple-system,
+  "Segoe UI",
+  "Helvetica Neue",
+  sans-serif;
 
 /* Monospace */
-font-family: 'Geist Mono', 'Monaco', 'Courier New', monospace;
+font-family: "Geist Mono", "Monaco", "Courier New", monospace;
 ```
 
 #### Font Loading Optimization
 
 **What is `display: 'swap'`?**
+
 - Shows fallback font while Google Font loads
 - User sees content immediately (better UX)
 - Once loaded, swaps to actual font
 
-| Strategy | Load Time | Fallback | Pros | Cons |
-|----------|-----------|----------|------|------|
-| `display: swap` | ~1-2s | System font | Fast, content visible | Brief font switch |
-| `display: block` | ~3s+ | Invisible text | Smooth transition | Slow, hidden text |
-| `display: optional` | ~0.5s | System font | Fastest | May not load if slow |
+| Strategy            | Load Time | Fallback       | Pros                  | Cons                 |
+| ------------------- | --------- | -------------- | --------------------- | -------------------- |
+| `display: swap`     | ~1-2s     | System font    | Fast, content visible | Brief font switch    |
+| `display: block`    | ~3s+      | Invisible text | Smooth transition     | Slow, hidden text    |
+| `display: optional` | ~0.5s     | System font    | Fastest               | May not load if slow |
 
 **Recommendation for this project: Use `swap`** — users see content immediately.
 
@@ -245,23 +252,23 @@ font-family: 'Geist Mono', 'Monaco', 'Courier New', monospace;
 
 ### Spacing & Layout
 
-| Element | Value |
-|---------|-------|
-| Page section padding | `py-16 lg:py-20` (60-80px top/bottom) |
-| Page section side padding | `px-4 sm:px-6 lg:px-8` (16-32px) |
-| Container max-width | `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8` |
-| Card padding | `p-6` (24px) |
-| Card gap | `gap-6` (24px) |
-| Section-to-section gap | `gap-20` (80px) |
-| Element-to-element gap | `gap-3` or `gap-4` (12-16px) |
-| Button padding | `px-4 py-2` (12px 24px vertical × horizontal) |
-| Form field padding | `p-3` (12px) |
-| Form field gap | `gap-5` (20px) |
-| Border radius (cards/sections) | `rounded-xl` (12px) |
-| Border radius (buttons) | `rounded-4xl` (pill, shadcn base-luma default) |
-| Border radius (inputs) | `rounded-md` (6px) |
-| Border radius (images) | `rounded-lg` (8-12px) |
-| Border radius (badges) | `rounded-full` (pill) |
+| Element                        | Value                                          |
+| ------------------------------ | ---------------------------------------------- |
+| Page section padding           | `py-16 lg:py-20` (60-80px top/bottom)          |
+| Page section side padding      | `px-4 sm:px-6 lg:px-8` (16-32px)               |
+| Container max-width            | `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`       |
+| Card padding                   | `p-6` (24px)                                   |
+| Card gap                       | `gap-6` (24px)                                 |
+| Section-to-section gap         | `gap-20` (80px)                                |
+| Element-to-element gap         | `gap-3` or `gap-4` (12-16px)                   |
+| Button padding                 | `px-4 py-2` (12px 24px vertical × horizontal)  |
+| Form field padding             | `p-3` (12px)                                   |
+| Form field gap                 | `gap-5` (20px)                                 |
+| Border radius (cards/sections) | `rounded-xl` (12px)                            |
+| Border radius (buttons)        | `rounded-4xl` (pill, shadcn base-luma default) |
+| Border radius (inputs)         | `rounded-md` (6px)                             |
+| Border radius (images)         | `rounded-lg` (8-12px)                          |
+| Border radius (badges)         | `rounded-full` (pill)                          |
 
 ---
 
@@ -273,16 +280,16 @@ Tablet:     641px - 1024px   (md, lg)
 Desktop:    1025px+          (xl, 2xl)
 ```
 
-| Layout | Mobile | Tablet | Desktop |
-|--------|--------|--------|---------|
-| Hero | Single column, no right image | Two columns, adjusted spacing | Full two-column layout |
-| Skill cards | 1 col | 2 col | 3 col |
-| Certification cards | 1 col | 2 col | 3 col |
-| Gallery | 1 col | 2 col | 3 col masonry |
-| Navigation | Hamburger menu, drawer | Full navbar, optimized spacing | Full navbar, all links visible |
-| Footer | Stacked vertical, center aligned | 2 columns | 3 columns |
-| H1 size | 28px | 36px | 48px |
-| Body text | 14px | 15px | 16px |
+| Layout              | Mobile                           | Tablet                         | Desktop                        |
+| ------------------- | -------------------------------- | ------------------------------ | ------------------------------ |
+| Hero                | Single column, no right image    | Two columns, adjusted spacing  | Full two-column layout         |
+| Skill cards         | 1 col                            | 2 col                          | 3 col                          |
+| Certification cards | 1 col                            | 2 col                          | 3 col                          |
+| Gallery             | 1 col                            | 2 col                          | 3 col masonry                  |
+| Navigation          | Hamburger menu, drawer           | Full navbar, optimized spacing | Full navbar, all links visible |
+| Footer              | Stacked vertical, center aligned | 2 columns                      | 3 columns                      |
+| H1 size             | 28px                             | 36px                           | 48px                           |
+| Body text           | 14px                             | 15px                           | 16px                           |
 
 ---
 
@@ -407,6 +414,7 @@ pnpm dlx shadcn@latest add sheet         # Mobile nav drawer
 ### Existing Components (Already Generated)
 
 #### Button (`components/ui/button.tsx`)
+
 - Uses `@base-ui/react/button` (not Radix `Slot`)
 - Variants: `default`, `outline`, `secondary`, `ghost`, `destructive`, `link`
 - Sizes: `xs`, `sm`, `default`, `lg`, `icon`, `icon-xs`, `icon-sm`, `icon-lg`
@@ -414,11 +422,13 @@ pnpm dlx shadcn@latest add sheet         # Mobile nav drawer
 - Uses `data-slot="button"` pattern
 
 #### ThemeProvider (`components/theme-provider.tsx`)
+
 - Uses `next-themes` with `attribute="class"` and `defaultTheme="system"`
 - Includes **ThemeHotkey**: press `D` key to toggle dark mode
 - Props type: `React.ComponentProps<typeof NextThemesProvider>` (not the removed `ThemeProviderProps`)
 
 #### Utils (`lib/utils.ts`)
+
 - `cn()` function using `clsx` + `tailwind-merge`
 
 ### Components to Build
@@ -504,7 +514,7 @@ export function Navbar() {
           <ThemeToggle />
           <Button variant="default" size="sm" className="hidden gap-2 md:flex">
             <Download size={16} />
-            Download CV
+            View CV
           </Button>
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -529,7 +539,7 @@ export function Navbar() {
             ))}
             <Button variant="default" className="w-full">
               <Download size={16} />
-              Download CV
+              View CV
             </Button>
           </div>
         </div>
@@ -540,12 +550,13 @@ export function Navbar() {
 ```
 
 **Navbar Design Specs**:
+
 - **Height**: 64px (`h-16`)
 - **Background**: `bg-background/95` with `backdrop-blur-sm` (glassmorphism)
 - **Position**: Sticky top with `z-50`
 - **Left**: Ship icon (28px, fill, primary color) + Name (14px, bold) + "Engine Cadet" (12px, muted)
 - **Center**: Nav links (14px, `text-muted-foreground`, hover → `text-foreground`)
-- **Right**: ThemeToggle + "Download CV" button (default variant, sm size)
+- **Right**: ThemeToggle + "View CV" button (default variant, sm size)
 - **Mobile**: Hamburger toggle (Phosphor `List`/`X`), slide-down drawer
 - **Active link**: `text-primary` with bottom border 2px Ocean Teal
 
@@ -556,19 +567,22 @@ export function Navbar() {
 ### 1. Home (Landing Page)
 
 #### Hero Section
+
 - **Background**: Gradient from Navy Blue to Deep Slate (`bg-gradient-to-br from-navy-blue to-deep-slate`)
 - **Height**: Full viewport or min 600px
 - **Layout**: Two columns (desktop), single column (mobile — no right image or image below)
 
 **Left Side Content**:
+
 - Heading: "Engine Cadet at Hafnia Osprey" (48px, bold, white)
 - Subheading: "Marine Engineer | Bangladesh Marine Academy Graduate" (20px, medium, Ocean Teal)
 - Description: "Passionate about marine engineering with hands-on experience in engine room operations aboard international merchant vessels. Specializing in diesel engines, auxiliary machinery, and maritime safety systems." (16px, regular, Light Gray)
 - CTA Buttons (12px gap between them):
   - Primary: "View My Experience" (default variant, lg size) + ArrowRight icon
-  - Secondary: "Download CV" (outline variant, lg size)
+  - Secondary: "View CV" (outline variant, lg size)
 
 **Right Side Content** (desktop only):
+
 - Professional photo placeholder
   - 400×500px (portrait orientation)
   - Rounded corners: `rounded-xl` (12px)
@@ -576,11 +590,13 @@ export function Navbar() {
   - Shadow: `shadow-[0_20px_40px_rgba(15,23,42,0.3)]`
 
 **Scroll Indicator**:
+
 - Chevron down icon (Phosphor `CaretDown`) at bottom center
 - Animated subtle bounce (`animate-bounce`)
 - Color: Ocean Teal
 
 #### Stats Section (Below Hero)
+
 - **Background**: Light Gray (`bg-light-gray dark:bg-card`)
 - **Padding**: `py-20`
 - **Grid**: `grid-cols-2 md:grid-cols-4 gap-8`
@@ -594,6 +610,7 @@ export function Navbar() {
     - 5+ | Specialized Skills
 
 #### Featured Section (Current Position)
+
 - **Background**: White (`bg-background`)
 - **Padding**: `py-20`
 - Title: "Current Position" (36px, bold)
@@ -609,11 +626,13 @@ export function Navbar() {
 ### 2. About Me Page
 
 #### Page Header
+
 - Title: "About Me" (48px, bold, Navy Blue)
 - Subtitle: "Marine Engineer in Progress" (20px, Ocean Teal)
 - Divider: 4px line, Ocean Teal, 60px wide (`w-15 h-1 bg-ocean-teal`)
 
 #### Introduction Section
+
 - **Background**: Light Gray
 - **Layout**: Two columns (image + text), single on mobile
 - **Image**: Professional photo (rounded 12px, `rounded-xl`)
@@ -624,6 +643,7 @@ export function Navbar() {
   - Career aspirations
 
 #### Journey Timeline
+
 - **Background**: White
 - **Title**: "My Journey" (32px, bold)
 - **Timeline**: Vertical on mobile, horizontal on desktop
@@ -639,6 +659,7 @@ export function Navbar() {
   - Hover effect: card lift (`hover:-translate-y-1`), Ocean Teal accent
 
 #### Skills Overview (Brief)
+
 - **Grid**: 3-4 columns (`grid-cols-1 md:grid-cols-2 lg:grid-cols-4`)
 - Each skill card:
   - Icon (Phosphor — Ship, Wrench, Certificate, etc.)
@@ -647,6 +668,7 @@ export function Navbar() {
   - Link: "Learn More →"
 
 #### Values Section
+
 - **Background**: Navy Blue gradient (`bg-gradient-to-br from-navy-blue to-deep-slate`)
 - **Text**: White
 - 3-4 cards in a row:
@@ -659,10 +681,12 @@ export function Navbar() {
 ### 3. Sea Experience Page
 
 #### Page Header
+
 - Title: "Sea Experience" (48px, bold, Navy Blue)
 - Subtitle: "Real-world learning aboard international merchant vessels"
 
 #### Current Vessel Card (Featured)
+
 - **Background**: Gradient Ocean Teal to Navy (`bg-gradient-to-br from-ocean-teal to-navy-blue`)
 - **Text**: White
 - **Layout**: Two columns — Left: large ship image/icon, Right: information
@@ -679,6 +703,7 @@ export function Navbar() {
 - Key Responsibilities: Bullet list (6-8 items) with icons for visual hierarchy
 
 #### Experience Cards (If Multiple Ships)
+
 - Card layout: 2 columns (1 on mobile), scrollable or grid
 - Each card:
   - Ship image
@@ -690,6 +715,7 @@ export function Navbar() {
   - Link: "View Details" (Ocean Teal)
 
 #### Responsibilities Section
+
 - **Background**: Light Gray
 - **Title**: "Key Responsibilities"
 - **Layout**: Two columns (1 on mobile)
@@ -706,6 +732,7 @@ export function Navbar() {
   - Description: Regular weight
 
 #### Career Path Timeline (Interactive)
+
 - Vertical or horizontal layout
 - Current position: Highlighted with Ocean Teal border
 - Future positions: Faded, darker color
@@ -722,16 +749,19 @@ export function Navbar() {
 ### 4. Certifications & Qualifications Page
 
 #### Page Header
+
 - Title: "Certifications & Qualifications" (48px, bold)
 - Subtitle: "STCW and maritime training compliance"
 
 #### Certification Cards Grid
+
 - **Layout**: 3 columns (2 on tablet, 1 on mobile)
 - **Card Height**: 300-350px
 - **Card Background**: White with border
 - **Border**: 1px solid light gray, left border 4px Ocean Teal
 
 #### Each Certification Card Contains
+
 - **Icon**: Top left (36×36px, Phosphor, Ocean Teal)
 - **Status Badge**: Top right
   - "Active" — Success Green bg, white text
@@ -748,6 +778,7 @@ export function Navbar() {
 #### Certification Categories
 
 **STCW Certificates** (most recent first):
+
 1. Basic Safety Training (PST - Personal Survival Techniques)
 2. Elementary First Aid (EFA)
 3. Fire Prevention & Fire Fighting (FP&FF)
@@ -755,22 +786,26 @@ export function Navbar() {
 5. Proficiency in Survival Craft & Rescue Boats (PSC&RB)
 
 **Advanced Courses**:
+
 1. Advanced Fire Fighting (AFF)
 2. Medical First Aid
 3. GMDSS (Global Maritime Distress & Safety System)
 
 **Academic Qualification**:
+
 1. Bachelor of Maritime Science (BMA)
    - Special card with diploma icon
    - Larger, more prominent
    - Include GPA/honors if applicable
 
 **Other Certifications**:
+
 1. Radar and ARPA
 2. Standard Swimming Test (SST)
 3. Company-specific certifications (if any)
 
 #### Filter/Sort Section (Optional)
+
 - Dropdown: "Filter by Type"
   - All Certificates
   - STCW Courses
@@ -785,12 +820,14 @@ export function Navbar() {
 ### 5. Technical Skills Page
 
 #### Page Header
+
 - Title: "Technical Skills" (48px, bold)
 - Subtitle: "Expertise in marine engineering systems and operations"
 
 #### Skills Categories (Tabs or Sections)
 
 **Section 1: Propulsion & Main Engines** (grid 2-3 columns)
+
 - Diesel Engine Operation
 - Engine Performance Monitoring
 - Fuel Treatment & Purification
@@ -799,6 +836,7 @@ export function Navbar() {
 - Auxiliary Machinery
 
 **Section 2: Electrical & Electronics** (grid 2-3 columns)
+
 - Electrical Distribution Systems
 - Generator Operation & Maintenance
 - Power Management
@@ -807,6 +845,7 @@ export function Navbar() {
 - Automation Systems
 
 **Section 3: Safety & Compliance** (grid 2-3 columns)
+
 - Maritime Safety Regulations
 - MARPOL Compliance
 - Engine Room Safety
@@ -815,6 +854,7 @@ export function Navbar() {
 - Environmental Protection
 
 **Section 4: Technical Knowledge** (grid 2-3 columns)
+
 - Ship Systems (HVAC, Plumbing)
 - Machinery Troubleshooting
 - Preventive Maintenance
@@ -823,6 +863,7 @@ export function Navbar() {
 - Performance Analysis
 
 **Section 5: Soft Skills** (grid 2-3 columns)
+
 - Leadership
 - Team Work
 - Problem Solving
@@ -848,6 +889,7 @@ export function Navbar() {
 ```
 
 #### Summary Section (Top or Bottom)
+
 - **Background**: Light Gray
 - **Grid**: 4 columns (2 on tablet, 1 on mobile)
 - Statistics:
@@ -861,16 +903,19 @@ export function Navbar() {
 ### 6. Gallery Page
 
 #### Page Header
+
 - Title: "Gallery" (48px, bold)
 - Subtitle: "Life aboard Hafnia Osprey and maritime experiences"
 
 #### Image Categories (Filter)
+
 - Buttons at top (horizontal scroll on mobile):
   - All | Engine Room | Ship Systems | Training | Crew & Events
 - Active button: Ocean Teal background, white text
 - Inactive: Gray text, white background
 
 #### Image Grid
+
 - **Masonry layout**: 3 columns (desktop), 2 (tablet), 1 (mobile)
 - Image aspect ratios: Mix of square and 4:3
 - Border radius: 8px (`rounded-lg`)
@@ -880,6 +925,7 @@ export function Navbar() {
   - Show caption
 
 #### Each Image Card
+
 - Image with caption
 - On hover:
   - Caption overlay appears
@@ -887,6 +933,7 @@ export function Navbar() {
   - Location/Date: 12px, light gray
 
 #### Lightbox/Modal
+
 - Click image to open full-screen view
 - Black background with transparency
 - Navigation arrows (previous/next) — Phosphor `CaretLeft`/`CaretRight`
@@ -894,6 +941,7 @@ export function Navbar() {
 - Image title and description below
 
 #### Example Images/Captions
+
 - "Main Engine - MAN B&W Diesel Engine"
 - "Fuel Purification System - Daily Maintenance"
 - "Engine Room Control Center"
@@ -906,12 +954,14 @@ export function Navbar() {
 ### 7. Contact Page
 
 #### Page Header
+
 - Title: "Get in Touch" (48px, bold, Navy Blue)
 - Subtitle: "Let's connect and discuss opportunities"
 
 #### Two Column Layout (1 on mobile)
 
 **Left Column: Contact Information**
+
 - **Background**: Light Gray (`bg-light-gray dark:bg-card`)
 - **Padding**: 40px (`p-10`)
 - **Border radius**: 12px (`rounded-xl`)
@@ -932,6 +982,7 @@ export function Navbar() {
   - Hover: Ocean Teal text color
 
 **Right Column: Contact Form**
+
 - **Background**: White (`bg-background`)
 - **Border**: 1px solid light gray (`border border-border`)
 - **Padding**: 40px (`p-10`)
@@ -968,6 +1019,7 @@ export function Navbar() {
 ## Phase 6: Footer Design
 
 ### Design Specifications
+
 - **Background**: Deep Slate (`bg-deep-slate dark:bg-background`)
 - **Text Color**: Text Light (`text-text-light`)
 - **Padding**: 60px top/bottom, container side padding
@@ -983,11 +1035,13 @@ export function Navbar() {
 ### Columns (3 columns → stacked on mobile)
 
 **Column 1: Quick Navigation**
+
 - Header: "Quick Links" (14px, semi-bold, white)
 - Links: Home, About, Experience, Certifications, Contact
 - Link style: `text-text-light/70 hover:text-ocean-teal transition-colors`
 
 **Column 2: Contact Information**
+
 - Header: "Get in Touch" (14px, semi-bold, white)
 - `EnvelopeSimple` icon + Email (clickable, hover: Ocean Teal)
 - `Phone` icon + Phone number
@@ -995,17 +1049,20 @@ export function Navbar() {
 - `LinkedinLogo` icon + LinkedIn URL
 
 **Column 3: Social Media**
+
 - Header: "Follow" (14px, semi-bold, white)
 - Icons (circular, 36px): LinkedIn, GitHub, Twitter/X, Email
 - Style: `bg-deep-slate` border circle, hover: `bg-ocean-teal scale-110`
 
 ### Bottom Bar
+
 - **Border-top**: 1px solid subtle divider
 - **Left**: "© 2026 [Sister's Name]. All rights reserved."
 - **Center**: Legal links (Privacy Policy | Terms of Service)
 - **Right**: "Built with Next.js & shadcn/ui"
 
 ### Mobile Behavior
+
 - Stack all columns vertically
 - Full width
 - Center align text
@@ -1035,34 +1092,34 @@ import {
 
 #### Icon Mapping for Portfolio
 
-| Icon | Use |
-|------|-----|
-| `House` | Home nav |
-| `User` | About/Profile |
-| `Briefcase` | Experience/Career |
-| `Certificate` | Certifications |
-| `Wrench` | Skills/Tools |
-| `Image` | Gallery |
-| `EnvelopeSimple` | Contact/Email |
-| `LinkedinLogo` | LinkedIn link |
-| `GithubLogo` | GitHub link |
-| `TwitterLogo` | Twitter/X link |
-| `Ship` | Vessel/Maritime/Logo |
-| `Engine` | Engineering |
-| `Gear` | Mechanics/Settings |
-| `CheckCircle` | Active/Completed status |
-| `Clock` | Duration/Time |
-| `MapPin` | Location |
-| `Phone` | Phone number |
-| `Heart` | Values/Passion |
-| `ArrowRight` | CTA arrows |
-| `Download` | CV download |
-| `Moon` / `Sun` | Theme toggle |
-| `CaretDown` | Scroll indicator / Dropdown |
-| `CaretLeft` / `CaretRight` | Gallery lightbox nav |
-| `MagnifyingGlass` | Search/Filter |
-| `BookOpen` | Education/Academic |
-| `List` / `X` | Mobile menu open/close |
+| Icon                       | Use                         |
+| -------------------------- | --------------------------- |
+| `House`                    | Home nav                    |
+| `User`                     | About/Profile               |
+| `Briefcase`                | Experience/Career           |
+| `Certificate`              | Certifications              |
+| `Wrench`                   | Skills/Tools                |
+| `Image`                    | Gallery                     |
+| `EnvelopeSimple`           | Contact/Email               |
+| `LinkedinLogo`             | LinkedIn link               |
+| `GithubLogo`               | GitHub link                 |
+| `TwitterLogo`              | Twitter/X link              |
+| `Ship`                     | Vessel/Maritime/Logo        |
+| `Engine`                   | Engineering                 |
+| `Gear`                     | Mechanics/Settings          |
+| `CheckCircle`              | Active/Completed status     |
+| `Clock`                    | Duration/Time               |
+| `MapPin`                   | Location                    |
+| `Phone`                    | Phone number                |
+| `Heart`                    | Values/Passion              |
+| `ArrowRight`               | CTA arrows                  |
+| `Download`                 | CV download                 |
+| `Moon` / `Sun`             | Theme toggle                |
+| `CaretDown`                | Scroll indicator / Dropdown |
+| `CaretLeft` / `CaretRight` | Gallery lightbox nav        |
+| `MagnifyingGlass`          | Search/Filter               |
+| `BookOpen`                 | Education/Academic          |
+| `List` / `X`               | Mobile menu open/close      |
 
 ---
 
@@ -1070,25 +1127,28 @@ import {
 
 ### Buttons (shadcn base-luma variants)
 
-| State | Primary (default) | Outline | Ghost |
-|-------|-------------------|---------|-------|
-| Default | `bg-primary text-primary-foreground` | `border-border bg-background` | transparent |
-| Hover | `bg-primary/80` | `bg-muted` | `bg-muted` |
-| Active | translate-y-1px (built-in) | translate-y-1px | translate-y-1px |
-| Disabled | `opacity-50, pointer-events-none` | `opacity-50` | `opacity-50` |
+| State    | Primary (default)                    | Outline                       | Ghost           |
+| -------- | ------------------------------------ | ----------------------------- | --------------- |
+| Default  | `bg-primary text-primary-foreground` | `border-border bg-background` | transparent     |
+| Hover    | `bg-primary/80`                      | `bg-muted`                    | `bg-muted`      |
+| Active   | translate-y-1px (built-in)           | translate-y-1px               | translate-y-1px |
+| Disabled | `opacity-50, pointer-events-none`    | `opacity-50`                  | `opacity-50`    |
 
 ### Links
+
 - Default: Ocean Teal color, no underline
 - Hover: Darker teal, underline
 - Visited: Navy Blue
 - Active: Ocean Teal, bold
 
 ### Cards
+
 - Default: `bg-card border-border rounded-xl shadow-sm`
 - Hover: `shadow-md hover:border-primary` (Ocean Teal border), `hover:-translate-y-1 transition-all`
 - Active/Featured: Left border 4px Ocean Teal
 
 ### Form Inputs
+
 - Default: `border-input bg-background`
 - Focus: `border-ring ring-3 ring-ring/30` (shadcn default focus)
 - Filled: `bg-background text-foreground`
@@ -1096,11 +1156,13 @@ import {
 - Success: `border-success-green ring-success-green/20` + light green tint
 
 ### Navigation Links (Navbar)
+
 - Default: `text-muted-foreground` (opacity 0.8 feel)
 - Hover: `text-foreground` (opacity 1.0 feel)
 - Active: `text-primary` with bottom border 2px Ocean Teal
 
 ### Social Icons (Footer)
+
 - Default: Circle bg, muted color
 - Hover: Ocean Teal bg, white icon, `scale-110 transition-transform`
 
@@ -1139,6 +1201,7 @@ function MyComponent() {
 ```
 
 ### When to Use `'use client'`
+
 - Components with `useState`, `useEffect`, `useRef`
 - Event handlers that need browser APIs
 - Components using `next-themes` (`useTheme`)
@@ -1214,6 +1277,7 @@ export const revalidate = 3600 // 1 hour
 ```
 
 ### Performance Summary
+
 - **Images**: Use `next/image` with `quality={85}` and `sizes` prop
 - **Fonts**: Loaded via `next/font/google` (auto-optimized, no external requests)
 - **Code splitting**: `dynamic()` import for heavy components (gallery lightbox)
@@ -1221,12 +1285,14 @@ export const revalidate = 3600 // 1 hour
 - **Tailwind v4**: Auto-purges unused styles
 
 ### Lighthouse Targets
+
 - Performance: > 90
 - Accessibility: > 95
 - Best Practices: > 90
 - SEO: > 95
 
 ### Font Testing Checklist
+
 1. **Chrome DevTools Lighthouse**: CLS should be < 0.1, font swap should not cause layout shift
 2. **WebPageTest.org**: Check font loading waterfall, ensure parallel load
 3. **Cross-browser**: Test on Chrome, Firefox, Safari, Edge + mobile (iOS + Android)
@@ -1260,22 +1326,20 @@ vercel
   "headers": [
     {
       "source": "/api/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-store" }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
     },
     {
       "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
-      ]
+      "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }]
     }
   ]
 }
 ```
 
 ### Vercel Environment Variables
+
 Set in Vercel dashboard:
+
 - `NEXT_PUBLIC_FORM_ENDPOINT`
 - `NEXT_PUBLIC_GA_ID`
 - Any private keys
@@ -1307,6 +1371,7 @@ pnpm build && pnpm typecheck && pnpm lint
 ```
 
 ### Manual Testing Checklist
+
 - [ ] Navbar displays correctly on all breakpoints
 - [ ] Dark mode toggle works (button + `D` hotkey)
 - [ ] Hero section renders with correct maritime colors
@@ -1329,6 +1394,7 @@ npx husky init
 ```
 
 Create `.husky/pre-commit`:
+
 ```bash
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
@@ -1376,6 +1442,7 @@ To Create:
 ## Update Strategy
 
 As sister progresses in career, easy updates:
+
 - Change "Engine Cadet" → "4th Engineer" in constants and components
 - Add new certifications to certifications data
 - Update ship details when changing vessels
