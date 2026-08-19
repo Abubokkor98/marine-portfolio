@@ -85,7 +85,7 @@ export function HeroSection() {
             >
               <Anchor size={14} className="text-ocean-teal" />
               <span className="text-xs font-medium tracking-wide text-muted-foreground">
-                Bangladesh Marine Academy · 58th Batch
+                {HERO_TEXT.academy}
               </span>
             </motion.div>
 
@@ -97,7 +97,7 @@ export function HeroSection() {
               transition={transition(0.1)}
               className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-navy-blue sm:text-5xl lg:text-6xl"
             >
-              Sumaiya Akter
+              {HERO_TEXT.cadetName}
             </motion.h1>
 
             {/* Role */}
@@ -108,7 +108,7 @@ export function HeroSection() {
               transition={transition(0.18)}
               className="text-lg font-medium text-ocean-teal sm:text-xl"
             >
-              Engine Cadet — Marine Engineer
+              {HERO_TEXT.roleTitle}
             </motion.p>
 
             {/* Bio */}
@@ -134,8 +134,8 @@ export function HeroSection() {
                 size="lg"
                 className="gap-2"
                 render={
-                  <Link href="#experience">
-                    <span>Sea Experience</span>
+                  <Link href={HERO_TEXT.primaryCtaHref}>
+                    <span>{HERO_TEXT.primaryCtaText}</span>
                     <ArrowRight size={18} weight="bold" />
                   </Link>
                 }
@@ -146,12 +146,12 @@ export function HeroSection() {
                 className="gap-2"
                 render={
                   <Link
-                    href="/cv.pdf"
+                    href={HERO_TEXT.secondaryCtaHref}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <FileText size={18} />
-                    <span>View CV</span>
+                    <span>{HERO_TEXT.secondaryCtaText}</span>
                   </Link>
                 }
               />
